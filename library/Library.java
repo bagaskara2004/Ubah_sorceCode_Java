@@ -27,7 +27,7 @@ class Library {
     return isExist;
   }
 
-  public void giveBook(String bookId, String memberId) {
+  public void giveBook(String memberId, String bookId) {
     Book book = this.getBookById(bookId);
     this.books.remove(book);
 

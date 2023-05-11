@@ -169,7 +169,7 @@ abstract class Main {
     System.out.print("id book : ");
     String bookId = scan.next();
 
-    library.receiveBook(memberId, bookId);
+    library.receiveBook(bookId, memberId);
   }
 
   public static void donate(){
@@ -179,9 +179,10 @@ abstract class Main {
     supply.name = scan.next();
 
     System.out.print("quantity : ");
-    supply.qty = input.nextInt();
+    int qty = input.nextInt();
+    supply.setQty(qty);
 
-    for (int i = 1;i<=supply.qty ;i++ ) {
+    for (int i = 1;i<=qty ;i++ ) {
       System.out.println("====masukan buku ke-"+i+"====");
       addBook();
     }
@@ -189,7 +190,7 @@ abstract class Main {
   }
   public static void ShowDonate() {
     for (Supplyer supply : library.supply) {
-      System.out.println("name = "+supply.name + " , Qty = " + supply.qty);
+      System.out.println("name = "+supply.name + " , Qty = " + supply.getQty());
     }
   }
 }

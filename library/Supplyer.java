@@ -1,3 +1,11 @@
 class Supplyer extends Member{
-	public int qty;
+	private int qty;
+
+	void setQty(int qty){
+		this.qty = qty;
+	}
+	public int getQty(){
+		return this.qty;
+	}
+
 }
