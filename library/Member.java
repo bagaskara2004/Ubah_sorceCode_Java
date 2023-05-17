@@ -12,4 +12,7 @@ class Member {
   public void giveBook(Book book) {
     this.borrowedBooks.remove(book);
   }
+  public void popUp(){
+    System.out.println("tambah Member sukses");
+  }
 }

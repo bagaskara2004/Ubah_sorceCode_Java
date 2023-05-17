@@ -8,4 +8,9 @@ class Supplyer extends Member{
 		return this.qty;
 	}
 
+	@Override
+	public void popUp(){
+		System.out.println("terimakasih");
+	}
+
 }

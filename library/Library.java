@@ -17,15 +17,15 @@ class Library {
     this.supply.add(supplyer);
   }
 
-  public Boolean isMemberIdExist(String id) {
-    Boolean isExist = false;
-    for (Member member : this.members) {
-      if (member.id == id) {
-        isExist = true;
-      }
-    }
-    return isExist;
-  }
+  // public Boolean isMemberIdExist(String id) {
+  //   Boolean isExist = false;
+  //   for (Member member : this.members) {
+  //     if (member.id == id) {
+  //       isExist = true;
+  //     }
+  //   }
+  //   return isExist;
+  // }
 
   public void giveBook(String memberId, String bookId) {
     Book book = this.getBookById(bookId);

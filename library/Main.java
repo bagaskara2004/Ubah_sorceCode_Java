@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-abstract class Main {
+class Main{
 
   static Scanner scan = new Scanner(System.in);
   static Library library = new Library();
@@ -35,7 +35,7 @@ abstract class Main {
       }
 
       System.out.print("continue ? (y/n)=> ");
-      isContinue = scan.next();
+      isContinue = scan.nextLine();
     }
   }
 
@@ -93,6 +93,7 @@ abstract class Main {
       pilihan = scan.nextInt();
     }catch(Exception e){
       System.out.println("inputan salah");
+      pilihan = 0;
     }
     return pilihan;
   }
@@ -148,6 +149,7 @@ abstract class Main {
       }
     }
     if (repeat == true) {
+      member.popUp();
       library.addMember(member);
     }
   }
@@ -163,13 +165,17 @@ abstract class Main {
   }
 
   public static void returnBook() {
-    System.out.print("id member : ");
-    String memberId = scan.next();
+    try{
+      System.out.print("id member : ");
+      String memberId = scan.next();
 
-    System.out.print("id book : ");
-    String bookId = scan.next();
+      System.out.print("id book : ");
+      String bookId = scan.next();
 
-    library.receiveBook(bookId, memberId);
+      library.receiveBook(bookId, memberId);
+    }catch(Exception e){
+      System.out.println("tidak ada");
+    }
   }
 
   public static void donate(){
@@ -186,6 +192,7 @@ abstract class Main {
       System.out.println("====masukan buku ke-"+i+"====");
       addBook();
     }
+    supply.popUp();
     library.addSupplyer(supply);
   }
   public static void ShowDonate() {
